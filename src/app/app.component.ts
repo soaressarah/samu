@@ -9,12 +9,13 @@ import {SamuService} from './services/samu.service'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [UFService, SamuService]
 })
 export class AppComponent implements OnInit {
-    title = 'app';
     ufs : UF[];
     dados_da_samu : Dados[];
+    uf_dada : UF;
 
     constructor(private ufService: UFService, private samuService: SamuService)
     { }
@@ -22,5 +23,13 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         this.ufs = this.ufService.getAll();
         this.dados_da_samu = this.samuService.getAllMunicipiosAtendidosPorEstado();
+        this.uf_dada = this.UfDefinida();
+    }
+
+    UfDefinida(): UF {
+      for(let uf of this.ufs){
+        if(uf.id == 43) return uf;
+      }
+
     }
 }
