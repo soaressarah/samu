@@ -30,6 +30,17 @@ export class AppComponent implements OnInit {
       for(let uf of this.ufs){
         if(uf.id == 43) return uf;
       }
+    }
 
+    calculoDeMedia() : number{
+      var qtd = 0;
+      var total = 0;
+      for(let mun of this.dados_da_samu){
+        if(mun.uf id == 13){
+          qtd++;
+          total += mun.valor;
+        }
+      }
+      return total/qtd;
     }
 }
