@@ -2,3 +2,11 @@
 <div style="text-align:center" class="title">
   <h1>{{uf_dada}}</h1>
 </div>
+<p>ID: {{uf_dada.id}} </p>
+<p>Área: {{uf_dada.area}} </p>
+<p>Municipios atendidos - média: {{media}} </p>
+<ul>
+  <li *ngFor = "let mun of municipios_atendidos">
+      Ano: {{mun.ano}} Quantidade: {{mun.valor}}
+  </li>
+</ul>

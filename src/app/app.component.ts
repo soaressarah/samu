@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
     ufs : UF[];
     dados_da_samu : Dados[];
     uf_dada : UF;
+    municipios_atendidos: Dados[] = [];
+    media : number;
 
     constructor(private ufService: UFService, private samuService: SamuService)
     { }
@@ -36,11 +38,12 @@ export class AppComponent implements OnInit {
       var qtd = 0;
       var total = 0;
       for(let mun of this.dados_da_samu){
-        if(mun.uf id == 13){
+        if(mun.uf id == 43){
           qtd++;
           total += mun.valor;
+          this.municipios_atendidos.push(mun);
         }
       }
-      return total/qtd;
+      return Math.round(total/qtd);
     }
 }
