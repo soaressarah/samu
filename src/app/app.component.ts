@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
         this.ufs = this.ufService.getAll();
         this.dados_da_samu = this.samuService.getAllMunicipiosAtendidosPorEstado();
         this.uf_dada = this.UfDefinida();
+        this.media = this.calculoDeMedia();
     }
 
     UfDefinida(): UF {
@@ -38,7 +39,7 @@ export class AppComponent implements OnInit {
       var qtd = 0;
       var total = 0;
       for(let mun of this.dados_da_samu){
-        if(mun.uf id == 43){
+        if(mun.uf_id == 43){
           qtd++;
           total += mun.valor;
           this.municipios_atendidos.push(mun);
