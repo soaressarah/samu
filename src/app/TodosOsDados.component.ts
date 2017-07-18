@@ -8,11 +8,10 @@ import {SamuService} from './services/samu.service'
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [UFService, SamuService]
+  templateUrl: './TodosOsDados.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class TodosOsDadosComponent implements OnInit {
     ufs : UF[];
     dados_da_samu : Dados[];
     uf_dada : UF;
@@ -32,7 +31,7 @@ export class AppComponent implements OnInit {
 
     defineUF(): void {
       for(let uf_dada of this.ufs){
-        if (uf_dada.id == 43) this.uf_dada = uf_dada;
+        if (uf_dada.id == 51) this.uf_dada = uf_dada;
       }
 }
 

@@ -8,11 +8,10 @@ import {SamuService} from './services/samu.service'
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [UFService, SamuService]
+  templateUrl: './Resumo.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class ResumoComponent implements OnInit {
     ufs : UF[];
     dados_da_samu : Dados[];
     uf_dada : UF;
@@ -24,17 +23,9 @@ export class AppComponent implements OnInit {
 
     ngOnInit(): void {
         this.ufs = this.ufService.getAll();
-        this.dados_da_samu = this.samuService.getAllMunicipiosAtendidosPorEstado();
         this.uf_dada = this.ufService.getPorID(43);
-        this.municipios_atendidos = this.samuService.getPorUFMunicipiosAtendidosPorEstado(this.uf_dada);
         this.media = this.calculoDeMedia();
     }
-
-    defineUF(): void {
-      for(let uf_dada of this.ufs){
-        if (uf_dada.id == 43) this.uf_dada = uf_dada;
-      }
-}
 
     calculoDeMedia(): number {
       var qtd = 0;

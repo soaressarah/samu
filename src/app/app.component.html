@@ -1,12 +1,8 @@
+
 <!--The whole content below can be removed with the new code.-->
-<div style="text-align:center" class="title">
-  <h1>{{uf_dada.nome}}</h1>
+<div class="title">
+  <a routerLink="/resumo">Resumo</a>
+  <a routerLink="/dadosuf">Dados da UF</a>
+  <a routerLink="/todososdados">Todos os dados</a>
 </div>
-<p>ID: {{uf_dada.id}} </p>
-<p>Área: {{uf_dada.area}} </p>
-<p>Municipios atendidos - média: {{media}} </p>
-<ul>
-  <li *ngFor = "let mun of municipios_atendidos">
-      Ano: {{mun.ano}} Quantidade: {{mun.valor}}
-  </li>
-</ul>
+<router-outlet> </router-outlet>
