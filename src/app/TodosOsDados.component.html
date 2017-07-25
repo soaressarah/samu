@@ -1,11 +1,8 @@
 <div style="text-align:center" class ="details">
-  <h2> TODOS OS DADOS: {{uf_dada.nome}} </h2>
-  <h3>ID: {{uf_dada.id}}</h3>
-  <h3>Area: {{uf_dada.area}}</h3>
-  <h3>Média de municipios atendidos: {{media}}</h3>
+  <h2> TODOS OS DADOS </h2>
 </div>
 <ul>
-  <li *ngFor = "let mun of municipios_atendidos">
-      Ano: {{mun.ano}} Quantidade: {{mun.valor}}
+  <li *ngFor = "let mun of dados">
+      Nome: {{mun.uf.nome}} Ano: {{mun.ano}} Quantidade: {{mun.valor}}
   </li>
 </ul>

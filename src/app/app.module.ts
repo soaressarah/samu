@@ -10,6 +10,8 @@ import { RouterModule }   from '@angular/router';
 
 import {UFService} from './services/uf.service'
 import {SamuService} from './services/samu.service'
+import {newModelService} from './services/newModel.service'
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ component: TodosOsDadosComponent
 }
     ])
   ],
-  providers: [SamuService, UFService],
+  providers: [SamuService, UFService, newModelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
